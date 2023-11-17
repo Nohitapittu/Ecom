@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    {% for i in p %}
+    <div class="col-md-6">
+      <a href="{% url 'Ecomapp:detail' i.id i.slug %}"><b>{{i.title}}</b></a> <br>
+      <img src="{{i.img.url}}" alt="" height="300" width="300" ><br>
+      ₹{{i.price}}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
